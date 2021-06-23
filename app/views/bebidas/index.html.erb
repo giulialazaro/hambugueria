@@ -1,0 +1,30 @@
+<% if flash[:notice] %>
+    <div class="alert alert-success" role="alert">
+        <%= flash[:notice] %>
+    </div>
+<% end %>
+<div class="container mt-5">
+<h3 class="text-center mb-4">Bebidas</h3>
+
+
+
+<table class="table table-bordered table-hover text-center" style="border-color:#000000 ">
+    <thead>
+        <tr>
+            <td class="text-white" style="word-wrap: break-word; !important; background-color: #F4A460">Descrição</td>
+            <td class="text-white" style="word-wrap: break-word; !important; background-color: #F4A460;">Valor</td>
+            <td class="text-white" style="word-wrap: break-word; !important; background-color: #F4A460;">Ações</td>
+        </tr>
+    </thead>
+    <tbody>
+    <% @bebidas.each do |bebida| %>
+        <tr>
+            <td><%= bebida.descricao %></td>
+            <td><%= bebida.valor %></td>
+            <td><%=link_to "Editar", edit_bebidas_path(bebida.id), class: "btn btn-info text-white"%>
+            <%= link_to "Remover", bebida, method: :delete, data: {confirm:"Tem certeza que deseja remover a bebida: #{bebida.descricao}?"}, class: "btn btn-danger text-white"  %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table> 
+</div>

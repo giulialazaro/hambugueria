@@ -1,0 +1,38 @@
+<% if flash[:notice] %>
+    <div class="alert alert-success" role="alert">
+        <%= flash[:notice] %>
+    </div>
+<% end %>
+<div class="container mt-5">
+<h3 class="text-center mb-4">Pedidos</h3>
+
+<h4>Valor Recebido dos Pedidos: R$<%= @valor_recebido %> </h4>
+
+<table class="table table-bordered table-hover text-center" style="border-color:#000000 ">
+    <thead>
+        <tr>
+            <td class="text-white" style="word-wrap: break-word; !important; background-color: #F4A460">Nome</td>
+            <td class="text-white" style="word-wrap: break-word; !important; background-color: #F4A460">Endereco</td>
+            <td class="text-white" style="word-wrap: break-word; !important; background-color: #F4A460;">Telefone</td>
+            <td class="text-white" style="word-wrap: break-word; !important; background-color: #F4A460;">Lanche</td>
+            <td class="text-white" style="word-wrap: break-word; !important; background-color: #F4A460;">Bebida</td>
+            <td class="text-white" style="word-wrap: break-word; !important; background-color: #F4A460;">Valor</td>
+             <td class="text-white" style="word-wrap: break-word; !important; background-color: #F4A460;">Ações</td>
+        </tr>
+    </thead>
+    <tbody>
+    <% @contratos.each do |contrato| %>
+        <tr>
+            <td><%= contrato.nome %></td>
+            <td><%= contrato.endereco %></td>
+            <td><%= contrato.telefone %></td>
+            <td><%= contrato.burguer.nome %></td>
+            <td><%= contrato.bebida.descricao %></td>
+            <td><%= contrato.valor %></td>
+            <td><%=link_to "Editar", edit_contratos_path(contrato.id) , class: "btn btn-info text-white"%>
+             <%= link_to "Remover", contrato, method: :delete, data: {confirm:"Tem certeza que deseja remover o pedido de: #{contrato.nome}?"}, class: "btn btn-danger text-white"  %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table> 
+</div>
