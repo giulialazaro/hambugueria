@@ -21,7 +21,7 @@
             <td><%= burguer.nome %></td>
             <td><%= burguer.descricao %></td>
             <td><%= burguer.valor %></td>
-            <td><%=link_to "Editar", edit_burguers_path(burguer.id), class: "btn btn-info text-white"%>
+            <td><%=link_to "Editar", edit_burguers_path(burguer.id), class: "btn text-white", style: "background-color: #A0522D"%>
             <%= link_to "Remover", burguer, method: :delete, data: {confirm:"Tem certeza que deseja remover a bebida: #{burguer.nome}?"}, class: "btn btn-danger text-white"  %></td>
         </tr>
     <% end %>

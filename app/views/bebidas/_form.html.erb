@@ -4,7 +4,7 @@
     </div>
 <% end %>
 <%= form_for @bebida  do |form|%>
-    <div class="container mx-auto border  p-0 mt-5 mb-5" style="background-color: #FFE4C4; border-color: #000000 !important;">
+    <div class="container mx-auto border mt-3" style="background-color: #FFE4C4; border-color: #000000 !important;">
         <div class="row mt-5">
             <div  class="col-sm-5 mx-auto">
                 <div class="form-group"  >
@@ -21,12 +21,10 @@
                 </div>
             </div>
         </div>       
-        <div class="row mb-5">
-            <div class="col-sm-5 mt-2 mx-auto">
-                <div class="form-group">
-                    <%= form.submit "Salvar", class:"btn btn-success w-100", style: "background-color: #00000" %>
-                    <%=link_to "Cancelar", bebidas_path, class: "btn btn-danger text-white mb-3 w-100 mt-2"%>
-                </div>
+        <div class="row mt-3">
+            <div class="col-md-5 mb-4 mx-auto">
+              <%= form.submit "Salvar", class:"btn btn-lg  text-white ", style: "background-color: #A0522D" %>
+               <%=link_to "Cancelar", bebidas_path, class: "btn  btn-lg btn-danger text-white"%>
             </div>
         </div> 
     </div>    

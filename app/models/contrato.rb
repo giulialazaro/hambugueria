@@ -4,7 +4,7 @@ class Contrato < ApplicationRecord
   validates  :nome , :presence => { :message => " é obrigatório !"}  
   validates  :telefone , :presence => { :message => " é obrigatório !"}  
   validates  :endereco , :presence => { :message => " é obrigatório !"} 
-  validates  :burguer || :bebida , :presence => { :message => " é obrigatório !"}  
+  validates  :burguer , :presence => { :message => " é obrigatório !"}  
   
   validate :validar_telefone 
   def validar_telefone

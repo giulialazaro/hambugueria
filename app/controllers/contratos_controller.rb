@@ -1,4 +1,5 @@
 class ContratosController < ApplicationController
+    skip_before_action :require_authentication
     def index 
         @contratos = Contrato.order(created_at: :desc)
         @valor_recebido = 0
