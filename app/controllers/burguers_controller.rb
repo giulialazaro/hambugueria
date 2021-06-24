@@ -33,6 +33,4 @@ class BurguersController < ApplicationController
     def edit
         @burguer = Burguer.find(params[:id])
     end
-
-
 end    

@@ -1,6 +1,6 @@
 class Contrato < ApplicationRecord
-  belongs_to :burguer
-  belongs_to :bebida
+  belongs_to :burguer, optional: true
+  belongs_to :bebida, optional: true
   validates  :nome , :presence => { :message => " é obrigatório !"}  
   validates  :telefone , :presence => { :message => " é obrigatório !"}  
   validates  :endereco , :presence => { :message => " é obrigatório !"} 
