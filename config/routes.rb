@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   get "contratos/:id/edit", to: "contratos#edit", as: :edit_contratos
   patch "contratos/:id", to:"contratos#update", as: :contrato
   delete "contratos/:id/", to: "contratos#destroy", as: :contratinho
+  get "cardapios", to: "cardapios#index", as: :cardapinho
 end

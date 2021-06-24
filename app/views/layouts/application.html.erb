@@ -44,8 +44,7 @@
           Cardápio
           </a>
           <ul class="dropdown-menu" style="background-color: #FFDEAD" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Lanches</a></li>
-            <li><a class="dropdown-item" href="#">Bebidas</a></li>
+            <%= link_to 'Cárdapio', cardapinho_path, class: 'nav-link active navbar-brand' %>
             <%= link_to 'Realizar Pedido', contratos_new_path, class: 'nav-link active navbar-brand' %>
           </ul>
         </li>
